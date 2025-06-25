@@ -156,5 +156,5 @@ Special thanks to:
 ## 📧 Contact
 
 **GODFREY T R**
-📧 [godfrey.prof@gmail.com](mailto:godfrey.prof@gmail.com) 
+📧 [Mail](godfrey.prof@gmail.com) 
 🔗 [LinkedIn](https://linkedin.com/in/godfrey-1823lw)
