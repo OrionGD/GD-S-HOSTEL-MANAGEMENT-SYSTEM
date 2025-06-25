@@ -1,0 +1,73 @@
+-- Create the main database for the hostel management system
+CREATE DATABASE IF NOT EXISTS gd_hms;
+USE gd_hms;
+
+-- Table: attendance
+-- Stores attendance records for hostellers
+CREATE TABLE attendance (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    date DATE NOT NULL,
+    status ENUM('P', 'A', 'L') NOT NULL,  -- P = Present, A = Absent, L = Leave
+    PRIMARY KEY (id),
+    INDEX (username)
+);
+
+-- Table: hostellers
+-- Contains basic information about hostellers
+CREATE TABLE hostellers (
+    hosteller_id INT(11) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    birth_date DATE DEFAULT NULL,
+    email VARCHAR(100) DEFAULT NULL,
+    phone_number VARCHAR(15) DEFAULT NULL,
+    room_number INT(11) DEFAULT NULL,
+    hostel_name VARCHAR(50) DEFAULT NULL,
+    PRIMARY KEY (hosteller_id)
+);
+
+-- Table: outpass_requests
+-- Manages requests made by students to leave the hostel
+CREATE TABLE outpass_requests (
+    request_id INT(11) NOT NULL AUTO_INCREMENT,
+    user_id INT(11) DEFAULT NULL,
+    request_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    start_date DATE DEFAULT NULL,
+    end_date DATE DEFAULT NULL,
+    reason TEXT DEFAULT NULL,
+    status ENUM('Pending', 'Approved', 'Rejected') DEFAULT 'Pending',
+    username VARCHAR(50) DEFAULT NULL,
+    PRIMARY KEY (request_id),
+    INDEX (user_id)
+);
+
+-- Table: users
+-- Stores login credentials and profile information of all users
+CREATE TABLE users (
+    user_id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('warden', 'hosteller') NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) DEFAULT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    phone_number VARCHAR(15) DEFAULT NULL,
+    year_of_study INT(11) DEFAULT NULL,
+    department VARCHAR(100) DEFAULT NULL,
+    hostel_name VARCHAR(50) DEFAULT NULL,
+    room_number VARCHAR(10) DEFAULT NULL,
+    DOB DATE DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    PRIMARY KEY (user_id)
+);
+
+-- Table: warden
+-- Contains login and contact details of wardens
+CREATE TABLE warden (
+    warden_id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) DEFAULT NULL,
+    phone VARCHAR(20) DEFAULT NULL,
+    PRIMARY KEY (warden_id)
+);
