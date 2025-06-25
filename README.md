@@ -1,8 +1,3 @@
-# GD-S-HOSTEL-MANAGEMENT-SYSTEM
-Thanks for sharing your detailed report. Based on it, here’s an enhanced **GitHub-ready `README.md`** file that aligns with your **project report structure**, academic requirements, and system features:
-
----
-
 ````markdown
 # 🏠 Hostel Management System
 
@@ -162,4 +157,4 @@ Special thanks to:
 
 **GODFREY T R**
 📧 [godfrey.prof@gmail.com](mailto:godfrey.prof@gmail.com) 
-🔗 [LinkedIn]([https://linkedin.com/in/your-profile](https://www.linkedin.com/in/godfrey-1823lw?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BdSnPHWPcTwaBJKerbKIpHw%3D%3D))
+🔗 [LinkedIn](https://linkedin.com/in/godfrey-1823lw)
